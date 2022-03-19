@@ -1,10 +1,10 @@
-import { useEffect } from 'react';
-import { Provider } from 'react-redux';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import store from './redux/store';
-import { HomePage, Register, Login} from './pages';
-import PrivateRoute from './PrivateRoute';
-import ScrollToTop from './components/ScrollTop';
+import { useEffect } from "react";
+import { Provider } from "react-redux";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import store from "./redux/store";
+import { HomePage, Register, Login, ControlDevice, TempPage,SoilPage,SoundPage,LightPage } from "./pages";
+import PrivateRoute from "./PrivateRoute";
+import ScrollToTop from "./components/ScrollTop";
 // import { utils } from './helpers';
 // import { loadUser } from './redux/auth/authSlice';
 
@@ -30,8 +30,12 @@ const App = () => {
           <Route exact path="/register" component={Register} />
           <Route exact path="/login" component={Login} />
 
-          {/* <Route path="/listfood" component={ListfoodPage} />
-          <PrivateRoute path="/payment" component={PaymentPage} />
+          <Route path="/control" component={ControlDevice} />
+          <Route path="/temperature" component={TempPage} />
+          <Route path="/moisture" component={SoilPage} />
+          <Route path="/sound" component={SoundPage} />
+          <Route path="/light" component={LightPage} />
+          {/* <PrivateRoute path="/payment" component={PaymentPage} />
 
           <PrivateRoute exact path="/report" component={ReportPage} /> */}
         </Switch>
